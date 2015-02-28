@@ -1,0 +1,31 @@
+Project With:Infinilitics.com
+
+Task: Calculate the shortest path for all the edges in a Bi-Directional graph.
+
+Description:  Consider the following scenario,  a country has lot of villages , each village represents a node. 
+Create a dummy data-set representing N villages, say N=50 or 100 for now. properties of villages are 
+
+    Village-Name:
+    No of roads Connecting to Other Villages. (i.e Edges).
+    Length of each Road.
+    Names  of Neighboring Villages respective to a Road(Edge). 
+
+(you can add more properties)
+
+you need to store all this data in Hbase. So a common way of storing this type of data in Hbase is, each row represents a Village.
+( you need to go though how Hbase stores the data, what is a columnfamily, Regionservers, Region . the reason for including Hbase is , we are using it in our App, so want to know if you can quickly learn the things)
+I leave it to your choice how you store the data in Hbase. Read the Village Data from Hbase, create the vertices and edges and Populate the graph in a Graph DB of your choice. Implement the Shortest Path Algorithm and save the results back to Hbase
+
+Technologies To Be Used:
+
+    Hadoop Version of  1.2 or higher.
+    Hbase Version of 0.94 or higher.
+    Graph DB of your choice - Giraph, Titan, Neo4J
+    Development Platform - Java
+
+You can use a Single Node Cluster or N-Node Cluster, depending on the resources Available to you.
+(if you can run a 4 Node cluster, we would like you to scale the number of edges in the Graph to 1000 - 10,000)  It is Totally Optional
+
+1) I have set up Hadoop and HBase on single node. Titan used HBase as backend storage.
+2) I have written Java Code with HBase Client API to upload graph data from local file system to HBase database.
+3) I have written Java Code with HBase & Titan Client API to load graph from HBase and implemented SSSP with the same. The output is stored back to HBase.
